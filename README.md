@@ -1,5 +1,5 @@
-# Taller-de-proyecto-2
-Se subiran los archivos de la materia taller de proyecto 2
+# Estación Meteorologica (Taller-de-proyecto-2- UNLP)
+Se subiran los archivos de la Estacion Meteorologica construida para taller de proyecto 2. La misma consta de un desarrollo de Python, el cual simula a partir de distintos Threds y numeros aleatorios aproximados a la realidad. Ademas, se tubo en cuenta el uso de la base de datos de PostgreSQL. 
 
 
 # Instrucciones de uso Postgres
