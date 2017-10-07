@@ -4,22 +4,20 @@ Se subiran los archivos de la Estacion Meteorologica construida para taller de p
 
 # Instrucciones de uso Postgres
 
-PASO 1
-Abir terminal y colocar los siguientes comandos:
+1) Abir una terminal y colocar los siguientes comandos:
 
 		sudo apt-get update
 		sudo apt-get install postgresql postgresql-contrib
 		pip install psycopg2 // si falla, buscar como instalar psycopg	
 
-Luego tienen que configurarlo, asi que se colocar
+Luego se debe configurar dicho software, realizando lo siguiente:
 
 		sudo -u postgres psql postgres
 
-Eso va abrir la consola de postgres con el usurio "postgres" (no quieran cambiarlo por ahora que les va a traer problemas).
-
+El resultado del comando anteriro, abrira la consola de postgres con el usurio "postgres".
 Finalmente, tienen que seguir la siguiente secuencia:
 		
-ATENCIÓN: NO DEJAR VACIO EL CAMPO DE CONTRASEÑA
+		ATENCIÓN: NO DEJAR VACIO EL CAMPO DE CONTRASEÑA
 
 		postgres=# \password postgres 
 		Enter new password: 
@@ -28,14 +26,14 @@ ATENCIÓN: NO DEJAR VACIO EL CAMPO DE CONTRASEÑA
 
 
 
-PASO 2
-Instalamos la interfaz apra manejar Postgres:
+2) Instalamos la interfaz para manejar Postgres:
 
 		sudo apt-get install pgadmin3
 
-Al abrirla la interfaz no vana  tener nada conectado, asi que hagan click en el enchufe o boton conectar (arriba a la izquierda)
+Al inicializarla, se observaraque no se encuentra conectada la base de datos. Realizar un click izquierdo sobre "add conection to a server".
+
 Completar de la siguiente manera:
-		
+
 		name: tallerDeProyecto2
 		Host:localhost
 		Port:5432
@@ -44,11 +42,13 @@ Completar de la siguiente manera:
 		UserName : postgres
 		passward : (la que gusten, pero la que ponga, fijense de entrar al .py y ponerle esta misma).
 		
-Presionar aceptar y listo, ya tienen el servidor creado, ahora entren hasta q les aparezca "Databases" y hagan click derecho y crear una base dE datos nueva con el nombre practica1. Cuando terminen esto, dentro del repositorio hay un backup con la base de datos ya iniciada. Para usarla, clik derecho en la base de datos con el nombre practica1 ->restore... y se busca la direccion en donde se encuentra dicho backup. Si da algun error en la carga no pasa nada, es un problema de registro o algo del archivo.
+Presionar aceptar al finalizar y se tendrá el servidor creado. Paso seguido, habrá que crear la base de datos. Para esto, se debe acceder al servidor hasta que visualicen "Databases",luego realizar click derecho y crear una base de datos nueva con el nombre “practica1”. 
+
+Si todo lo anterior se ejecutó con éxito, dentro del repositorio hay un backup con la base de datos ya iniciada. Para usarla, se debe realizar click derecho en la base de datos con el nombre practica1 ->restore... y se debe buscar la dirección en donde se encuentra dicho backup. En caso de errores en la ejecución no hay problemas, lo más probable es que sean de registros o algo en relación a la distribución de Sistema operativo donde se ejecute.
+
 
  Para poder seguir utilizando todo, sigan este tutorial:
 
 		http://www.postgresqltutorial.com/postgresql-python/	
 
-Tengan mucho cuidado con la identacion, no dejen espacios en blanco en python que aparentemente me trajo problemas.
 
